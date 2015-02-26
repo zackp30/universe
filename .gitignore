@@ -31,3 +31,5 @@ Session.vim
 *.gppb
 
 build/
+
+*.json
