@@ -1,0 +1,8 @@
+computers:
+  main:
+    memory: "100000000000000YB"
+    cpu:
+      cores: "2000000"
+      type: "Intel i7"
+      
+    
