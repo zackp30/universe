@@ -3,3 +3,7 @@ references:
       title: Largest known primes
       publisher: University of Tennessee
       URL: "https://primes.utm.edu/largest.html"
+    - id: earth_atmosphere
+      title: Composition of the atmosphere.
+      publisher: Wikipedia
+      URL: "http://en.wikipedia.org/wiki/Atmosphere_of_Earth#mediaviewer/File:Atmosphere_gas_proportions.svg""
