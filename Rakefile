@@ -47,8 +47,11 @@ end
 
 rule '.pdf' => '.md' do |t|
   sh "cat #{t.source} | #{gpp_command} | pandoc  --template latex.tex -S -f markdown+#{extensions} -o #{t.name} --filter #{filters}" unless book_regex.match t.source
-  cp t.name, '.' unless book_regex.match t.source
-  rm t.source if /^build\//.match t.source
+  mv t.name, '.' if /^build\//.match t.source
+end
+
+rule '.epub' => '.pdf' do |t|
+  sh "cat build/books/#{File.basename(t.source, '.pdf') + '.md'} | #{gpp_command} | pandoc -S --template default.epub -f markdown+#{extensions} -o #{t.name} --filter #{filters} --epub-stylesheet epub.css" # unless book_regex.match t.source
 end
 
 rule '.pdf' => '.slide.md' do |t|
