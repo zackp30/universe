@@ -1,0 +1,33 @@
+*.toc
+*.pdf
+*.aux
+*.out
+*.log
+*.swp
+*.snm
+*.nav
+*.dvi
+*.glo
+*.html
+.#*
+*~
+tags
+images/stuff/# Created by https://www.gitignore.io
+
+### vim ###
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+*.eps
+
+# emacs
+
+\#*\#
+
+*.gppb
+
+build/

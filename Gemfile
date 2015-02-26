@@ -1,0 +1,8 @@
+source 'https://rubygems.org'
+gem 'rake'
+gem 'guard'
+gem 'guard-rake'
+gem 'guard-shell'
+gem 'guard-livereload'
+gem 'ctioga2'
+gem 'powerpoint'

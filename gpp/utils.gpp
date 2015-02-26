@@ -1,0 +1,2 @@
+<#define tmpl|<#exec bin/tmpl|#1>>
+<#define time|<#tmpl tmpls/time.erb>>
