@@ -1,2 +1,4 @@
 <#define tmpl|<#exec bin/tmpl|#1>>
 <#define time|<#tmpl tmpls/time.erb>>
+<#define json|<#exec bin/jqw|#1 #2>>
+<#define shipmetric|<#json .metrics.#1|data/ships/#2.json>>

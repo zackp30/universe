@@ -5,6 +5,15 @@ pdfs = Dir.glob('**/*.md').map { |f| f.sub(/\.md$/, '.pdf') }
 books = Dir.glob('**/*.md').map { |f| f if book_regex.match(f) }
 books.compact!
 pdfs -= books
+csons = []
+
+Dir.glob('data/**/*.cson') { |c| csons << c.sub(/\.cson$/, '.json') }
+csons = csons.sort
+task :cson => csons
+
+rule '.json' => '.cson' do |csontojson|
+  sh "cson2json #{csontojson.source} >| #{csontojson.name}"
+end
 
 pdfs = pdfs.sort
 task pdf: pdfs

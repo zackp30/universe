@@ -1,0 +1,3 @@
+#!/bin/bash
+
+jq $@ | perl -pe 'chomp if eol'
