@@ -12,7 +12,9 @@ csons = csons.sort
 task :cson => csons
 
 rule '.json' => '.cson' do |csontojson|
-  sh "cson2json #{csontojson.source} >| #{csontojson.name}"
+  sh "cat #{csontojson.source} | gpp -H -x -DCSON=1 --include gpp.gppb >> build/tmp.cson"
+  sh "cson2json build/tmp.cson >| #{csontojson.name}"
+  rm "build/tmp.cson"
 end
 
 pdfs = pdfs.sort
