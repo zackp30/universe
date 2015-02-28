@@ -2,3 +2,6 @@
 <#define time|<#tmpl tmpls/time.erb>>
 <#define json|<#exec bin/jqw|#1 #2>>
 <#define shipmetric|<#json .metrics.#1|data/ships/#2.json>>
+<#define dates|<#json .dates.#1|data/dates.json>>
+<#define data|<#json .#1|data/misc.json>>
+<#define dl|<#exec bin/cache|#1>>

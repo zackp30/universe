@@ -1,0 +1,8 @@
+#!/bin/bash
+# Simple download cacher.
+
+dl="$(echo $@ | sed 's/http:\/.*\/\(.*\)/\1/')"
+cd dlcache
+[ ! -f "$dl" ] && wget -q $@
+cat $dl
+
