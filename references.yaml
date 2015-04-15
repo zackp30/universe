@@ -1,8 +1,4 @@
 references:
-    - id: primes
-      title: Largest known primes
-      publisher: University of Tennessee
-      URL: "https://primes.utm.edu/largest.html"
     - id: earth_atmosphere
       title: Composition of the atmosphere.
       publisher: Wikipedia
