@@ -5,16 +5,16 @@ pdfs = Dir.glob('**/*.md').map { |f| f.sub(/\.md$/, '.pdf') }
 books = Dir.glob('**/*.md').map { |f| f if book_regex.match(f) }
 books.compact!
 pdfs -= books
-csons = []
+yamls = []
 
-Dir.glob('data/**/*.cson') { |c| csons << c.sub(/\.cson$/, '.json') }
-csons = csons.sort
-task :cson => csons
+Dir.glob('data/**/*.yaml') { |c| yamls << c.sub(/\.yaml$/, '.json') }
+yamls = yamls.sort
+task :yaml => yamls
 
-rule '.json' => '.cson' do |csontojson|
-  sh "cat #{csontojson.source} | gpp -H -x -DCSON=1 --include gpp.gppb >> build/tmp.cson"
-  sh "cson2json build/tmp.cson >| #{csontojson.name}"
-  rm "build/tmp.cson"
+rule '.json' => '.yaml' do |yamltojson|
+  sh "cat #{yamltojson.source} | gpp -H -x -DYAML=1 --include gpp.gppb >> build/tmp.yaml"
+  sh "yaml2json build/tmp.yaml >| #{yamltojson.name}"
+  rm "build/tmp.yaml"
 end
 
 pdfs = pdfs.sort
